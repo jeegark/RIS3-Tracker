@@ -393,12 +393,67 @@
             'Other': 'status-other'
         };
 
+        const defaultMapView = {
+            center: [52.8, -1.5],
+            zoom: 6
+        };
+
+        const filterStatusMap = {
+            'cancelled-ris3': 'CANCELLED at RIS3',
+            'cancelled-election': 'CANCELLED since 2024 election',
+            'committed': 'Committed for construction',
+            'construction': 'In construction',
+            'ris4': 'RIS4 pipeline'
+        };
+
         let map;
         let markers = {};
         let currentFilter = 'all';
 
+        function schemeMatchesFilter(scheme, filter = currentFilter) {
+            if (filter === 'all') return true;
+            return scheme.status === filterStatusMap[filter];
+        }
+
+        function syncMapMarkers() {
+            const visibleMarkers = [];
+
+            map.closePopup();
+
+            Object.values(markers).forEach(({ marker, scheme }) => {
+                if (schemeMatchesFilter(scheme)) {
+                    if (!map.hasLayer(marker)) {
+                        marker.addTo(map);
+                    }
+                    visibleMarkers.push(marker);
+                    return;
+                }
+
+                if (map.hasLayer(marker)) {
+                    map.removeLayer(marker);
+                }
+            });
+
+            if (currentFilter === 'all') {
+                map.setView(defaultMapView.center, defaultMapView.zoom);
+                return;
+            }
+
+            if (visibleMarkers.length === 1) {
+                map.setView(visibleMarkers[0].getLatLng(), 10);
+                return;
+            }
+
+            if (visibleMarkers.length > 1) {
+                map.fitBounds(L.featureGroup(visibleMarkers).getBounds(), {
+                    padding: [30, 30],
+                    maxZoom: 10
+                });
+            }
+        }
+
         function initMap() {
-            map = L.map('map').setView([52.8, -1.5], 6);
+            map = L.map('map').setView(defaultMapView.center, defaultMapView.zoom);
 
             L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -516,13 +571,7 @@
             let count = 0;
 
             schemesData.forEach((scheme, index) => {
-                if (currentFilter !== 'all') {
-                    if (currentFilter === 'cancelled-ris3' && scheme.status !== 'CANCELLED at RIS3') return;
-                    if (currentFilter === 'cancelled-election' && scheme.status !== 'CANCELLED since 2024 election') return;
-                    if (currentFilter === 'committed' && scheme.status !== 'Committed for construction') return;
-                    if (currentFilter === 'construction' && scheme.status !== 'In construction') return;
-                    if (currentFilter === 'ris4' && scheme.status !== 'RIS4 pipeline') return;
-                }
+                if (!schemeMatchesFilter(scheme)) return;
                 count++;
 
                 const item = document.createElement('div');
@@ -552,6 +601,7 @@
                 btn.classList.add('active');
                 currentFilter = btn.dataset.filter;
                 populateSchemesList();
+                syncMapMarkers();
             });
         });
 
@@ -559,6 +609,7 @@
             initMap();
             initCharts();
             populateSchemesList();
+            syncMapMarkers();
         });
     </script>
 </body>
