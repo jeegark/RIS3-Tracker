@@ -14,9 +14,9 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #0f1419;
-            color: #e5e7eb;
+            font-family: 'Arial Nova', Arial, sans-serif;
+            background: #001d3b;
+            color: #e1ede7;
             line-height: 1.5;
         }
 
@@ -30,13 +30,13 @@
         .left-panel {
             width: 340px;
             flex-shrink: 0;
-            background: #1a1f2e;
-            border-right: 1px solid #2d3748;
+            background: #2a3245;
+            border-right: 1px solid #3f598a33;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
             scrollbar-width: thin;
-            scrollbar-color: #4f5a73 transparent;
+            scrollbar-color: #3f598a transparent;
         }
 
         /* CENTRE — map */
@@ -51,8 +51,8 @@
         .right-panel {
             width: 360px;
             flex-shrink: 0;
-            background: #1a1f2e;
-            border-left: 1px solid #2d3748;
+            background: #2a3245;
+            border-left: 1px solid #3f598a33;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -61,54 +61,57 @@
         /* Header */
         .header {
             padding: 20px;
-            border-bottom: 1px solid #2d3748;
-            background: linear-gradient(135deg, #1a1f2e 0%, #242c3e 100%);
+            border-bottom: 1px solid #3f598a33;
+            background: #001d3b;
+        }
+        .header-brand {
+            font-size: 10px;
+            font-weight: 400;
+            color: #e1ede7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
         }
         .header h1 {
-            font-family: 'Sora', sans-serif;
-            font-size: 22px;
+            font-family: 'Arial Nova', Arial, sans-serif;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 4px;
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 0;
+            color: #ffffff;
         }
         .header p {
-            font-size: 12px;
-            color: #9ca3af;
+            font-size: 11px;
+            color: #8899aa;
+            margin-top: 6px;
         }
 
         /* Stats */
         .stats-section {
             padding: 16px 20px;
-            border-bottom: 1px solid #2d3748;
+            border-bottom: 1px solid #3f598a33;
         }
         .key-metric {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            border: 1px solid #374151;
-            border-radius: 8px;
+            background: #001d3b;
+            border: 1px solid #3f598a33;
+            border-radius: 6px;
             padding: 14px;
             text-align: center;
         }
         .key-metric .label {
-            font-size: 10px;
-            color: #9ca3af;
+            font-size: 9px;
+            color: #8899aa;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .key-metric .value {
             font-size: 28px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 700;
+            color: #feed01;
         }
         .key-metric .pct {
             font-size: 16px;
-            color: #ef4444;
+            color: #feed01;
         }
         .stat-grid {
             display: grid;
@@ -117,36 +120,39 @@
             margin-top: 10px;
         }
         .stat-card {
-            background: #242c3e;
-            border: 1px solid #3f4757;
-            border-radius: 8px;
+            background: #001d3b;
+            border: 1px solid #3f598a33;
+            border-left: 3px solid #8899aa;
+            border-radius: 6px;
             padding: 12px;
         }
         .stat-value {
             font-size: 20px;
             font-weight: 700;
-            color: #fff;
+            color: #ffffff;
             margin-bottom: 2px;
         }
         .stat-label {
-            font-size: 10px;
-            color: #9ca3af;
+            font-size: 9px;
+            color: #8899aa;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .stat-card.critical .stat-value { color: #ef4444; }
-        .stat-card.success .stat-value { color: #10b981; }
+        .stat-card.critical { border-left-color: #feed01; }
+        .stat-card.success { border-left-color: #e1ede7; }
 
         /* Charts */
         .chart-section {
             padding: 16px 20px;
-            border-bottom: 1px solid #2d3748;
+            border-bottom: 1px solid #3f598a33;
         }
         .chart-title {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
-            color: #f3f4f6;
+            color: #ffffff;
             margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .chart-container {
             position: relative;
@@ -159,28 +165,28 @@
 
         /* Filters */
         .filters {
-            padding: 16px 20px;
+            margin-top: 10px;
         }
         .filter-title {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
-            color: #f3f4f6;
-            margin-bottom: 8px;
+            color: #ffffff;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         .filter-buttons {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 5px;
         }
         .filter-btn {
-            padding: 7px 10px;
-            border: 1px solid #3f4757;
-            background: #242c3e;
-            color: #d1d5db;
-            border-radius: 6px;
-            font-size: 11px;
+            padding: 6px 8px;
+            border: 1px solid #3f598a;
+            background: #001d3b;
+            color: #ffffff;
+            border-radius: 4px;
+            font-size: 10px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -189,32 +195,32 @@
             overflow: hidden;
         }
         .filter-btn:hover {
-            border-color: #4f5a73;
-            background: #2a3447;
+            border-color: #feed01;
+            background: #001d3b;
         }
         .filter-btn.active {
-            background: #ef4444;
-            border-color: #dc2626;
-            color: #fff;
+            background: #feed01;
+            border-color: #feed01;
+            color: #001d3b;
         }
 
         /* Right panel — schemes list header + scrollable list */
         .right-panel-header {
             padding: 16px 20px;
-            border-bottom: 1px solid #2d3748;
+            border-bottom: 1px solid #3f598a33;
             flex-shrink: 0;
-            background: linear-gradient(135deg, #1a1f2e 0%, #242c3e 100%);
+            background: #001d3b;
         }
         .right-panel-header h2 {
-            font-family: 'Sora', sans-serif;
-            font-size: 16px;
+            font-family: 'Arial Nova', Arial, sans-serif;
+            font-size: 14px;
             font-weight: 600;
-            color: #f3f4f6;
+            color: #ffffff;
         }
         .right-panel-header .scheme-count {
-            font-size: 12px;
-            color: #9ca3af;
-            margin-top: 2px;
+            font-size: 11px;
+            color: #8899aa;
+            margin-top: 4px;
         }
         .schemes-list {
             flex: 1;
@@ -223,59 +229,61 @@
             padding: 12px 16px;
             padding-bottom: 40px;
             scrollbar-width: thin;
-            scrollbar-color: #4f5a73 transparent;
+            scrollbar-color: #3f598a transparent;
         }
         .scheme-item {
-            background: #242c3e;
-            border: 1px solid #3f4757;
-            border-radius: 6px;
+            background: #2a3245;
+            border: 1px solid #3f598a33;
+            border-left: 3px solid #8899aa;
+            border-radius: 4px;
             padding: 10px 12px;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             cursor: pointer;
             transition: all 0.2s ease;
-            border-left: 3px solid #374151;
         }
         .scheme-item:hover {
-            border-color: #4f5a73;
-            background: #2a3447;
+            border-color: #3f598a;
+            background: #36425e;
         }
         .scheme-name {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
-            color: #f3f4f6;
-            margin-bottom: 3px;
+            color: #ffffff;
+            margin-bottom: 4px;
         }
         .scheme-status {
-            font-size: 10px;
-            padding: 2px 7px;
+            font-size: 8px;
+            padding: 4px 8px;
             border-radius: 3px;
             display: inline-block;
-            font-weight: 500;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
-        .status-cancelled-ris3 { background: #7f1d1d; color: #fecaca; }
-        .status-cancelled-election { background: #5a1a1a; color: #fca5a5; }
-        .status-committed { background: #064e3b; color: #a7f3d0; }
-        .status-construction { background: #1e3a8a; color: #93c5fd; }
-        .status-ris4 { background: #7c2d12; color: #fed7aa; }
-        .status-other { background: #374151; color: #d1d5db; }
+        .status-cancelled-ris3 { background: #c0392b; color: #ffffff; }
+        .status-cancelled-election { background: #7b241c; color: #ffffff; }
+        .status-committed { background: #3f598a; color: #ffffff; }
+        .status-construction { background: #e1ede7; color: #001d3b; }
+        .status-ris4 { background: #d4a017; color: #001d3b; }
+        .status-other { background: #6b7280; color: #ffffff; }
 
         /* Leaflet overrides */
-        .leaflet-control-zoom { background: #242c3e !important; border: 1px solid #3f4757 !important; }
-        .leaflet-control-zoom a { background-color: #242c3e !important; border-bottom: 1px solid #3f4757 !important; color: #e5e7eb !important; }
-        .leaflet-control-zoom a:hover { background-color: #2a3447 !important; color: #fff !important; }
-        .leaflet-control-attribution { background: rgba(15, 20, 25, 0.9) !important; color: #9ca3af !important; }
-        .leaflet-popup-content { font-family: 'Inter', sans-serif !important; color: #1f2937 !important; }
-        .leaflet-popup-content-wrapper { background: #fff !important; border-radius: 8px !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important; }
-        .leaflet-popup-tip { background: #fff !important; }
-        .popup-scheme { font-weight: 600; font-size: 14px; margin-bottom: 8px; color: #1f2937; }
-        .popup-info { font-size: 12px; color: #4b5563; margin: 4px 0; }
-        .popup-status { font-weight: 600; margin-top: 8px; padding-top: 8px; border-top: 1px solid #e5e7eb; }
+        .leaflet-control-zoom { background: #2a3245 !important; border: 1px solid #3f598a33 !important; }
+        .leaflet-control-zoom a { background-color: #2a3245 !important; border-bottom: 1px solid #3f598a33 !important; color: #ffffff !important; font-family: 'Arial Nova', Arial, sans-serif !important; }
+        .leaflet-control-zoom a:hover { background-color: #36425e !important; color: #feed01 !important; }
+        .leaflet-control-attribution { background: rgba(0, 29, 59, 0.9) !important; color: #8899aa !important; font-family: 'Arial Nova', Arial, sans-serif !important; }
+        .leaflet-popup-content { font-family: 'Arial Nova', Arial, sans-serif !important; color: #001d3b !important; }
+        .leaflet-popup-content-wrapper { background: #e1ede7 !important; border-radius: 6px !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important; }
+        .leaflet-popup-tip { background: #e1ede7 !important; }
+        .popup-scheme { font-weight: 700; font-size: 13px; margin-bottom: 8px; color: #001d3b; }
+        .popup-info { font-size: 11px; color: #2a3245; margin: 4px 0; }
+        .popup-status { font-weight: 600; margin-top: 8px; padding-top: 8px; border-top: 1px solid #8899aa; }
 
         /* Scrollbar styling */
         .left-panel::-webkit-scrollbar, .schemes-list::-webkit-scrollbar { width: 6px; }
         .left-panel::-webkit-scrollbar-track, .schemes-list::-webkit-scrollbar-track { background: transparent; }
-        .left-panel::-webkit-scrollbar-thumb, .schemes-list::-webkit-scrollbar-thumb { background: #4f5a73; border-radius: 3px; }
+        .left-panel::-webkit-scrollbar-thumb, .schemes-list::-webkit-scrollbar-thumb { background: #3f598a; border-radius: 3px; }
 
         @media (max-width: 1200px) {
             .left-panel { width: 300px; }
@@ -283,7 +291,7 @@
         }
         @media (max-width: 900px) {
             .container { flex-direction: column; }
-            .left-panel, .right-panel { width: 100%; height: auto; max-height: 35vh; border: none; border-bottom: 1px solid #2d3748; }
+            .left-panel, .right-panel { width: 100%; height: auto; max-height: 35vh; border: none; border-bottom: 1px solid #3f598a33; }
             .map-container { flex: 1; min-height: 30vh; }
         }
     </style>
@@ -293,6 +301,7 @@
         <!-- LEFT PANEL -->
         <div class="left-panel">
             <div class="header">
+                <div class="header-brand">STONEHAVEN</div>
                 <h1>RIS3: The Road Investment Strategy Cull</h1>
                 <p>26 March 2026 | Interactive scheme tracker</p>
             </div>
@@ -334,17 +343,6 @@
                 </div>
             </div>
 
-            <div class="filters">
-                <div class="filter-title">Filter by Status</div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All (74)</button>
-                    <button class="filter-btn" data-filter="cancelled-ris3">Cut at RIS3 (23)</button>
-                    <button class="filter-btn" data-filter="cancelled-election">Cut Pre-RIS3 (11)</button>
-                    <button class="filter-btn" data-filter="committed">Committed (17)</button>
-                    <button class="filter-btn" data-filter="construction">In Build (9)</button>
-                    <button class="filter-btn" data-filter="ris4">RIS4 Pipeline (13)</button>
-                </div>
-            </div>
         </div>
 
         <!-- CENTRE — MAP -->
@@ -357,6 +355,16 @@
             <div class="right-panel-header">
                 <h2>Schemes</h2>
                 <div class="scheme-count" id="schemeCount">Showing 74 of 74</div>
+                <div class="filters">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All (74)</button>
+                        <button class="filter-btn" data-filter="cancelled-ris3">Cut at RIS3 (23)</button>
+                        <button class="filter-btn" data-filter="cancelled-election">Cut Pre-RIS3 (11)</button>
+                        <button class="filter-btn" data-filter="committed">Committed (17)</button>
+                        <button class="filter-btn" data-filter="construction">In Build (9)</button>
+                        <button class="filter-btn" data-filter="ris4">RIS4 Pipeline (13)</button>
+                    </div>
+                </div>
             </div>
             <div class="schemes-list">
                 <div id="schemesList"></div>
@@ -368,11 +376,11 @@
         const schemesData = [{"scheme": "A1 Morpeth to Ellingham", "latitude": 55.17, "longitude": -1.68, "status": "CANCELLED since 2024 election", "first_committed": "RIS1", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "A5036 Princess Way", "latitude": 53.45, "longitude": -2.98, "status": "CANCELLED since 2024 election", "first_committed": "RIS1", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "A47 Great Yarmouth Junctions", "latitude": 52.59, "longitude": 1.74, "status": "CANCELLED since 2024 election", "first_committed": "RIS1", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "A47 Wansford to Sutton", "latitude": 52.47, "longitude": -0.41, "status": "CANCELLED since 2024 election", "first_committed": "RIS1", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "A12 Colchester/Braintree Borders Garden Community", "latitude": 51.92, "longitude": 0.52, "status": "CANCELLED since 2024 election", "first_committed": "RIS2 HIF", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "A12 Chelmsford to A120", "latitude": 51.85, "longitude": 0.65, "status": "CANCELLED since 2024 election", "first_committed": "RIS1", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "A303 Amesbury to Berwick Down", "latitude": 51.17, "longitude": -1.78, "status": "CANCELLED since 2024 election", "first_committed": "RIS1", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "A358 Taunton to Southfields", "latitude": 51.0, "longitude": -3.1, "status": "CANCELLED since 2024 election", "first_committed": "RIS1", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "M27 J8", "latitude": 50.95, "longitude": -1.42, "status": "CANCELLED since 2024 election", "first_committed": "RIS1", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "A27 Arundel Bypass", "latitude": 50.86, "longitude": -0.56, "status": "CANCELLED since 2024 election", "first_committed": "RIS1", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "A27 Worthing and Lancing Improvements", "latitude": 50.82, "longitude": -0.37, "status": "CANCELLED since 2024 election", "first_committed": "RIS1", "notes": "", "pre_status": "CANCELLED since 2024 election"}, {"scheme": "A19 Seaton Burn", "latitude": 55.04, "longitude": -1.48, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A64 Hopgrove", "latitude": 54.05, "longitude": -0.96, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "M1 Leeds Eastern Gateway", "latitude": 53.78, "longitude": -1.48, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "M1/M62 Lofthouse Interchange", "latitude": 53.71, "longitude": -1.63, "status": "Other", "first_committed": "RIS3 pipeline", "notes": "Downgraded to renewals only", "pre_status": "Pipeline"}, {"scheme": "A1 Doncaster-Darrington", "latitude": 53.63, "longitude": -1.33, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "M1 J35A-39", "latitude": 53.54, "longitude": -1.4, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "M6 J22", "latitude": 53.46, "longitude": -2.58, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "M6 J19-21A", "latitude": 53.32, "longitude": -2.42, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "Manchester South East Junction Improvements", "latitude": 53.44, "longitude": -2.14, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A483 Pant-Llanymynech Bypass", "latitude": 52.6, "longitude": -3.17, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "M1 North Leicestershire extra capacity", "latitude": 52.85, "longitude": -1.25, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "M1 Leicester Western Access", "latitude": 52.65, "longitude": -1.2, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A5 Hinkley to Tamworth", "latitude": 52.47, "longitude": -1.6, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A47 Elm Road Junction", "latitude": 52.62, "longitude": 0.33, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "M11 Junction 13 Cambridge West", "latitude": 52.22, "longitude": 0.1, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "Severn Resilience Package", "latitude": 51.7, "longitude": -2.62, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A2 Brenley Corner", "latitude": 51.35, "longitude": 0.83, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A3/A247 Ripley South", "latitude": 51.35, "longitude": -0.41, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A2 Dover Access", "latitude": 51.13, "longitude": 1.32, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A303 Phase 2 upgrade", "latitude": 51.12, "longitude": -1.88, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A21 Safety package", "latitude": 51.03, "longitude": 0.53, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A27 Lewes to Polegate", "latitude": 50.87, "longitude": 0.02, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A27 Chichester Improvements", "latitude": 50.84, "longitude": -0.78, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A38 Trerulefoot-Carkeel safety package", "latitude": 50.41, "longitude": -4.75, "status": "CANCELLED at RIS3", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A47 Blofield to North Burlingham", "latitude": 52.56, "longitude": 1.49, "status": "In construction", "first_committed": "RIS1", "notes": "Cited as in construction although opened", "pre_status": "Complete July 2024 - March 2026"}, {"scheme": "M25 J10", "latitude": 51.32, "longitude": -0.47, "status": "In construction", "first_committed": "RIS1", "notes": "Cited as in construction although opened", "pre_status": "Complete July 2024 - March 2026"}, {"scheme": "M42 J6", "latitude": 52.36, "longitude": -1.84, "status": "In construction", "first_committed": "RIS1", "notes": "", "pre_status": "Complete July 2024 - March 2026"}, {"scheme": "A46 Coventry Junctions", "latitude": 52.4, "longitude": -1.5, "status": "In construction", "first_committed": "RIS1", "notes": "Binley completed, walsgrave awaited sow 2026 oft 2028. Works started", "pre_status": "In construction"}, {"scheme": "A47 North Tuddenham to Easton", "latitude": 52.52, "longitude": 1.13, "status": "In construction", "first_committed": "RIS1", "notes": "", "pre_status": "In construction"}, {"scheme": "A47 Thickthorn Junction", "latitude": 52.44, "longitude": 1.19, "status": "In construction", "first_committed": "RIS1", "notes": "", "pre_status": "In construction"}, {"scheme": "A428 Black Cat to Caxton Gibbet", "latitude": 52.16, "longitude": -0.31, "status": "In construction", "first_committed": "RIS1", "notes": "", "pre_status": "In construction"}, {"scheme": "A417 Air Balloon", "latitude": 51.8, "longitude": -1.93, "status": "In construction", "first_committed": "RIS1/RIS2", "notes": "", "pre_status": "In construction"}, {"scheme": "M3 J9", "latitude": 51.35, "longitude": -0.84, "status": "In construction", "first_committed": "RIS1", "notes": "", "pre_status": "In construction"}, {"scheme": "A66 Northern Trans-Pennine", "latitude": 54.58, "longitude": -2.15, "status": "Committed for construction", "first_committed": "2016", "notes": "Confirmed Jul 25", "pre_status": "Committed for construction"}, {"scheme": "M60/M62/M66 Simister Island", "latitude": 53.54, "longitude": -2.24, "status": "Committed for construction", "first_committed": "RIS2", "notes": "Confirmed Jul 25", "pre_status": "Committed for construction"}, {"scheme": "A46 Newark Bypass", "latitude": 53.07, "longitude": -0.81, "status": "Committed for construction", "first_committed": "Committed 2017", "notes": "Confirmed Jul 25", "pre_status": "Committed for construction"}, {"scheme": "A38 Derby Junctions", "latitude": 52.92, "longitude": -1.48, "status": "Committed for construction", "first_committed": "Pre-2010", "notes": "Confirmed Jul 25", "pre_status": "Committed for construction"}, {"scheme": "M54-M6 Link Road", "latitude": 52.66, "longitude": -2.14, "status": "Committed for construction", "first_committed": "Pre-2010", "notes": "Confirmed Jul 25", "pre_status": "Committed for construction"}, {"scheme": "Lower Thames Crossing", "latitude": 51.47, "longitude": 0.35, "status": "Committed for construction", "first_committed": "2013", "notes": "Confirmed Jul 25. Separated from RIS at RIS3", "pre_status": "Committed for construction"}, {"scheme": "A404 Bisham and High Wycombe", "latitude": 51.48, "longitude": -0.82, "status": "Committed for construction", "first_committed": "RIS3 pipeline", "notes": "Newly committed at RIS3 (was pipeline)", "pre_status": "Pipeline"}, {"scheme": "M180 Jct. 2-3", "latitude": 53.58, "longitude": -0.72, "status": "Committed for construction", "first_committed": "Unknown", "notes": "Renewal", "pre_status": ""}, {"scheme": "A180 Brocklesby to Barnetby Interchange", "latitude": 53.56, "longitude": -0.42, "status": "Committed for construction", "first_committed": "Unknown", "notes": "Renewal", "pre_status": ""}, {"scheme": "M62 Goole, Howden & Airmyn", "latitude": 53.72, "longitude": -0.88, "status": "Committed for construction", "first_committed": "Unknown", "notes": "Renewal", "pre_status": ""}, {"scheme": "M6 Lune Gorge", "latitude": 54.32, "longitude": -2.51, "status": "Committed for construction", "first_committed": "Unknown", "notes": "Renewal", "pre_status": ""}, {"scheme": "A46 Concrete Reconstruction", "latitude": 52.92, "longitude": -1.12, "status": "Committed for construction", "first_committed": "Unknown", "notes": "Renewal", "pre_status": ""}, {"scheme": "M42 Eastway Bridge", "latitude": 52.36, "longitude": -1.77, "status": "Committed for construction", "first_committed": "Unknown", "notes": "Renewal", "pre_status": ""}, {"scheme": "M27 J5-7 Concrete Overlay", "latitude": 50.9, "longitude": -1.37, "status": "Committed for construction", "first_committed": "Unknown", "notes": "Renewal", "pre_status": ""}, {"scheme": "Arundel Railway Bridge Replacement", "latitude": 50.86, "longitude": -0.54, "status": "Committed for construction", "first_committed": "Unknown", "notes": "Renewal", "pre_status": ""}, {"scheme": "M32 Eastville Viaduct Renewal", "latitude": 51.46, "longitude": -2.61, "status": "Committed for construction", "first_committed": "Unknown", "notes": "Renewal", "pre_status": ""}, {"scheme": "M5 J19-20 Wynhol Viaduct", "latitude": 51.56, "longitude": -2.72, "status": "Committed for construction", "first_committed": "Unknown", "notes": "Renewal", "pre_status": ""}, {"scheme": "A19 Moor Farm", "latitude": 54.97, "longitude": -1.42, "status": "RIS4 pipeline", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A5 Dodwells to Longshoot", "latitude": 52.45, "longitude": -1.56, "status": "RIS4 pipeline", "first_committed": "RIS1", "notes": "", "pre_status": "Cancelled pre-2024"}, {"scheme": "M6 J15 potteries access", "latitude": 53.07, "longitude": -2.14, "status": "RIS4 pipeline", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A11 Fiveways Junction", "latitude": 52.5, "longitude": 1.4, "status": "RIS4 pipeline", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "A12/A14 Copdock Interchange", "latitude": 52.05, "longitude": 1.2, "status": "RIS4 pipeline", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "M27 Southampton Access", "latitude": 50.94, "longitude": -1.38, "status": "RIS4 pipeline", "first_committed": "RIS3 pipeline", "notes": "", "pre_status": "Pipeline"}, {"scheme": "M1 J28", "latitude": 52.82, "longitude": -1.31, "status": "RIS4 pipeline", "first_committed": "Unknown", "notes": "", "pre_status": ""}, {"scheme": "M27 Corridor Improvements", "latitude": 50.92, "longitude": -1.36, "status": "RIS4 pipeline", "first_committed": "Unknown", "notes": "", "pre_status": ""}, {"scheme": "A5 / M42 J10", "latitude": 52.36, "longitude": -1.85, "status": "RIS4 pipeline", "first_committed": "Unknown", "notes": "", "pre_status": ""}, {"scheme": "A50 corridor", "latitude": 52.8, "longitude": -1.45, "status": "RIS4 pipeline", "first_committed": "Unknown", "notes": "", "pre_status": ""}, {"scheme": "A5 Gibbet Hill", "latitude": 52.38, "longitude": -1.56, "status": "RIS4 pipeline", "first_committed": "Unknown", "notes": "", "pre_status": ""}, {"scheme": "M62/A57 link road", "latitude": 53.52, "longitude": -2.06, "status": "RIS4 pipeline", "first_committed": "Unknown", "notes": "", "pre_status": ""}, {"scheme": "M1 J13", "latitude": 52.46, "longitude": -1.36, "status": "RIS4 pipeline", "first_committed": "Unknown", "notes": "", "pre_status": ""}];
 
         const statusColors = {
-            'CANCELLED at RIS3': '#dc2626',
-            'CANCELLED since 2024 election': '#7f1d1d',
-            'Committed for construction': '#059669',
-            'In construction': '#2563eb',
-            'RIS4 pipeline': '#ea580c',
+            'CANCELLED at RIS3': '#c0392b',
+            'CANCELLED since 2024 election': '#7b241c',
+            'Committed for construction': '#3f598a',
+            'In construction': '#e1ede7',
+            'RIS4 pipeline': '#d4a017',
             'Other': '#6b7280'
         };
 
@@ -437,8 +445,8 @@
                     labels: ['Cancelled at RIS3', 'Cancelled Pre-RIS3', 'In Construction', 'Committed', 'RIS4 Pipeline', 'Other'],
                     datasets: [{
                         data: [23, 11, 9, 17, 13, 1],
-                        backgroundColor: ['#dc2626', '#7f1d1d', '#2563eb', '#059669', '#ea580c', '#6b7280'],
-                        borderColor: '#1a1f2e',
+                        backgroundColor: ['#c0392b', '#7b241c', '#e1ede7', '#3f598a', '#d4a017', '#6b7280'],
+                        borderColor: '#2a3245',
                         borderWidth: 2
                     }]
                 },
@@ -449,9 +457,9 @@
                         legend: {
                             position: 'bottom',
                             labels: {
-                                color: '#9ca3af',
-                                font: { size: 10, family: "'Inter', sans-serif" },
-                                padding: 8,
+                                color: '#8899aa',
+                                font: { size: 9, family: "'Arial Nova', Arial, sans-serif" },
+                                padding: 10,
                                 usePointStyle: true
                             }
                         }
@@ -468,8 +476,8 @@
                     datasets: [{
                         label: 'Number of schemes',
                         data: [23, 11, 13, 9, 17, 1],
-                        backgroundColor: ['#dc2626', '#7f1d1d', '#ea580c', '#2563eb', '#059669', '#6b7280'],
-                        borderColor: '#1a1f2e',
+                        backgroundColor: ['#c0392b', '#7b241c', '#d4a017', '#e1ede7', '#3f598a', '#6b7280'],
+                        borderColor: '#2a3245',
                         borderWidth: 1,
                         borderRadius: 4
                     }]
@@ -488,13 +496,13 @@
                     },
                     scales: {
                         x: {
-                            ticks: { color: '#9ca3af', font: { size: 10 } },
-                            grid: { color: '#2d3748' },
+                            ticks: { color: '#8899aa', font: { size: 9, family: "'Arial Nova', Arial, sans-serif" } },
+                            grid: { color: '#3f598a33' },
                             beginAtZero: true,
-                            title: { display: true, text: 'Number of schemes', color: '#6b7280', font: { size: 9 } }
+                            title: { display: true, text: 'Number of schemes', color: '#8899aa', font: { size: 9, family: "'Arial Nova', Arial, sans-serif" } }
                         },
                         y: {
-                            ticks: { color: '#9ca3af', font: { size: 9, weight: 500 } },
+                            ticks: { color: '#8899aa', font: { size: 9, weight: 500, family: "'Arial Nova', Arial, sans-serif" } },
                             grid: { display: false }
                         }
                     }
